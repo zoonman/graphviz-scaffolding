@@ -25,9 +25,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@hpcc-js/wasm": "^1.2.0",
-    "@types/d3-graphviz": "^2.6.6",
-    "d3": "^6.5.0",
-    "d3-graphviz": "^3.1.0"
+    "@hpcc-js/wasm": "^1.2.0"
   }
 }

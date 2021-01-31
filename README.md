@@ -27,6 +27,6 @@
    ```
 
 5. Open `src/app.ts` and make your changes. 
-   Webpack will reload the app automatically
+   Webpack will reload the app automatically.
 
 Good luck!

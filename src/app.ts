@@ -1,4 +1,4 @@
-import * as hpccWasm from '@hpcc-js/wasm'
+import * as hpccWasm from '@hpcc-js/wasm';
 
 /**
  * A shorthand converting dot text into html
@@ -32,7 +32,6 @@ export const app = () => {
     divElement.setAttribute('id', 'main'); // some id to a DIV element
     bodyElms[0].appendChild(divElement); // add newly created div as child for BODY
 
-
     /**
      *  this is a initial DOT text for out diagram
      */
@@ -52,11 +51,14 @@ export const app = () => {
     // let's call it
     renderDot(dotData);
 
+    /**
+     * A simple random color generator for HSV colorspace
+     */
     const randomHsvColor = () => {
         return `${Math.random().toFixed(3)} ${Math.random().toFixed(3)} ${Math.random().toFixed(3)}`
     };
 
-    // run scheduler which will update out digraph every second
+    // run scheduler which will update graph every second
     setInterval(() => {
 
         // some dynamic data
@@ -75,5 +77,5 @@ export const app = () => {
         // render new dot file
         renderDot(dotData);
 
-    }, 1000);
+    }, 1000); // time in ms
 };
