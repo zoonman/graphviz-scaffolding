@@ -52,26 +52,40 @@ export const app = () => {
     renderDot(dotData);
 
     /**
+     * Random in range [0..1] with fixed length
+     * @param fractionDigits
+     */
+    const random1 = (fractionDigits: number): string => {
+        return Math.random().toFixed(fractionDigits);
+    }
+
+    /**
      * A simple random color generator for HSV colorspace
      */
     const randomHsvColor = () => {
-        return `${Math.random().toFixed(3)} ${Math.random().toFixed(3)} ${Math.random().toFixed(3)}`
+        return [
+            random1(3),
+            random1(3),
+            random1(3)
+        ].join(' ');
     };
+
+
 
     // run scheduler which will update graph every second
     setInterval(() => {
 
         // some dynamic data
         const dotData = `digraph G { 
-            a->b[label= ${Math.random().toFixed(2)}] 
-            b->c[label= ${Math.random().toFixed(2)} color="${randomHsvColor()}"] 
-            b->d[label= ${Math.random().toFixed(2)}] 
-            a->d[label= ${Math.random().toFixed(2)} color="${randomHsvColor()}"] 
+            a->b[label= ${random1(2)}] 
+            b->c[label= ${random1(2)} color="${randomHsvColor()}"] 
+            b->d[label= ${random1(2)}] 
+            a->d[label= ${random1(2)} color="${randomHsvColor()}"] 
             Sun[color=yellow style = filled]
             Moon[color=gold style = filled]
             Earth[color=lightblue style = filled]
-            Sun->Earth[label= ${Math.random().toFixed(2)} color="${randomHsvColor()}"] 
-            Moon->Earth[label= ${Math.random().toFixed(2)} color="${randomHsvColor()}"] 
+            Sun->Earth[label= ${random1(2)} color="${randomHsvColor()}"] 
+            Moon->Earth[label= ${random1(2)} color="${randomHsvColor()}"] 
         }`;
 
         // render new dot file
